@@ -2,10 +2,7 @@ body {
     background-color: #19242E;
 }
 
-h1 {
+h1, h2, p {
     color:antiquewhite;
 }
 
-p {
-    color:antiquewhite;
-}
