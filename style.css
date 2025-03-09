@@ -5,3 +5,24 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     color:antiquewhite;
 }
+
+#me {
+    background-color:#0d1216;
+    padding: 20px;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+#rounded {
+    border: solid 2px #0d1216;
+    border-radius: 20px;
+}
+
+#vCard {
+    background-color: #19242A;
+    padding: 10px;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 20px;
+}
