@@ -24,19 +24,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-
-    <!-- LinkedIn Profile -->
-    <url>
-        <loc>https://www.linkedin.com/in/dewan99/</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <!-- GitHub Profile -->
-    <url>
-        <loc>https://github.com/Dewanism</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
+    
 </urlset>
