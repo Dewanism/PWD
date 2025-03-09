@@ -3,7 +3,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://yourwebsite.com/</loc>
+        <loc>https://dewanism.com/</loc>
         <lastmod>2025-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
     <!-- About Section -->
     <url>
-        <loc>https://yourwebsite.com/#me</loc>
+        <loc>https://dewanism.com/#me</loc>
         <lastmod>2025-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
     <!-- VCard Section -->
     <url>
-        <loc>https://yourwebsite.com/#vCard</loc>
+        <loc>https://dewanism.com/#vCard</loc>
         <lastmod>2025-03-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
