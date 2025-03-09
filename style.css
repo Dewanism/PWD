@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6, p, li, ul {
     border: solid 2px #0d1216;
     border-radius: 20px;
     width: 100%;
+    max-width: 256px;
     height: auto;
 }
 
