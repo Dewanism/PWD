@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
+
 html {
     scroll-behavior: smooth;
 }
@@ -31,7 +33,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, li, ul {
-    color:antiquewhite;
+    color: antiquewhite;
 }
 
 #me, #vCard {
@@ -56,7 +58,6 @@ h1, h2, h3, h4, h5, h6, p, li, ul {
     max-width: 256px;
     height: auto;
 }
-
 
 ul {
     display: inline-block;
@@ -88,4 +89,175 @@ footer {
     font-size: 14px;
     margin-top: 40px; /* Increased spacing */
     border-top: 2px solid #ffd700;
+}
+
+/* Under construction page */
+.construction-page {
+    margin: 0;
+    min-height: 100vh;
+    padding: clamp(16px, 4vw, 40px);
+    display: grid;
+    place-items: center;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+    color: #eef2f6;
+    background:
+        radial-gradient(circle at 12% 10%, rgba(23, 68, 112, 0.5), transparent 36%),
+        radial-gradient(circle at 88% 88%, rgba(14, 55, 96, 0.55), transparent 40%),
+        linear-gradient(145deg, #050f1a 0%, #0a1f34 45%, #05101d 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.construction-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 20px);
+    mix-blend-mode: screen;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.construction-page::after {
+    content: "";
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px solid rgba(240, 245, 250, 0.12);
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.construction-shell {
+    width: 100%;
+    max-width: 940px;
+    position: relative;
+    z-index: 1;
+}
+
+.construction-panel {
+    text-align: center;
+    padding: clamp(24px, 5vw, 52px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02)),
+        linear-gradient(180deg, rgba(6, 27, 47, 0.8), rgba(4, 18, 31, 0.92));
+    backdrop-filter: blur(4px);
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: panelIn 900ms ease-out both;
+}
+
+.construction-logo {
+    width: clamp(180px, 32vw, 310px);
+    height: auto;
+    display: block;
+    margin: 0 auto 26px;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+    animation: logoBreathe 6s ease-in-out infinite;
+}
+
+.construction-kicker {
+    margin: 0;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 208, 73, 0.22);
+    border: 1px solid rgba(255, 208, 73, 0.65);
+    color: #ffecb3;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.construction-panel h1 {
+    margin: 18px 0 16px;
+    font-size: clamp(1.95rem, 4.2vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    color: #f8fafc;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.construction-message {
+    margin: 0 auto;
+    max-width: 44ch;
+    font-size: clamp(1rem, 1.85vw, 1.3rem);
+    line-height: 1.55;
+    color: #d5deea;
+    font-weight: 500;
+}
+
+.construction-portfolio {
+    margin: 18px auto 0;
+    max-width: 48ch;
+    font-size: clamp(0.94rem, 1.6vw, 1.05rem);
+    line-height: 1.5;
+    color: #bdcde1;
+}
+
+.construction-portfolio a {
+    color: #ffe08b;
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.construction-portfolio a:hover {
+    color: #fff3c4;
+}
+
+@keyframes panelIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes logoBreathe {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 600px) {
+    .construction-page {
+        padding: 14px;
+    }
+
+    .construction-panel {
+        border-radius: 22px;
+    }
+
+    .construction-logo {
+        width: clamp(150px, 42vw, 220px);
+        margin-bottom: 22px;
+    }
+
+    .construction-panel h1 {
+        letter-spacing: 0.02em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .construction-panel,
+    .construction-logo {
+        animation: none;
+    }
 }
