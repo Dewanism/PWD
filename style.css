@@ -141,6 +141,8 @@ footer {
 
 .construction-panel {
     text-align: center;
+    display: grid;
+    justify-items: center;
     padding: clamp(24px, 5vw, 52px);
     border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -163,6 +165,17 @@ footer {
     animation: logoBreathe 6s ease-in-out infinite;
 }
 
+.construction-inner-card {
+    width: min(100%, 700px);
+    padding: clamp(20px, 3vw, 30px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
 .construction-kicker {
     margin: 0;
     display: inline-block;
@@ -177,7 +190,7 @@ footer {
     font-weight: 700;
 }
 
-.construction-panel h1 {
+.construction-inner-card h1 {
     margin: 18px 0 16px;
     font-size: clamp(1.95rem, 4.2vw, 3.8rem);
     line-height: 1.1;
@@ -245,12 +258,17 @@ footer {
         border-radius: 22px;
     }
 
+    .construction-inner-card {
+        border-radius: 16px;
+        padding: 18px 16px 20px;
+    }
+
     .construction-logo {
         width: clamp(150px, 42vw, 220px);
         margin-bottom: 22px;
     }
 
-    .construction-panel h1 {
+    .construction-inner-card h1 {
         letter-spacing: 0.02em;
     }
 }
