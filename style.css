@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
+    background-color: #04101d;
 }
 
 nav {
@@ -94,8 +102,11 @@ footer {
 /* Under construction page */
 .construction-page {
     margin: 0;
+    width: 100%;
     min-height: 100vh;
-    padding: clamp(16px, 4vw, 40px);
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: clamp(12px, 3vw, 28px);
     display: grid;
     place-items: center;
     font-family: "Montserrat", "Segoe UI", sans-serif;
@@ -105,6 +116,8 @@ footer {
         radial-gradient(circle at 88% 88%, rgba(14, 55, 96, 0.55), transparent 40%),
         linear-gradient(145deg, #050f1a 0%, #0a1f34 45%, #05101d 100%);
     position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
     overflow: hidden;
 }
 
@@ -121,8 +134,8 @@ footer {
 .construction-page::after {
     content: "";
     position: absolute;
-    width: 460px;
-    height: 460px;
+    width: 360px;
+    height: 360px;
     top: 50%;
     left: 50%;
     border-radius: 50%;
@@ -134,26 +147,27 @@ footer {
 
 .construction-shell {
     width: 100%;
-    max-width: 940px;
+    max-width: 720px;
     position: relative;
     z-index: 1;
 }
 
 .construction-panel {
+    width: min(100%, 620px);
     text-align: center;
     display: grid;
     justify-items: center;
-    gap: 14px;
-    padding: clamp(26px, 5vw, 54px);
-    border-radius: 30px;
-    border: 2px solid rgba(255, 214, 90, 0.75);
+    gap: 12px;
+    padding: clamp(20px, 3.2vw, 30px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 217, 111, 0.5);
+    border-top: 3px solid rgba(255, 217, 111, 0.85);
     background:
-        linear-gradient(180deg, rgba(255, 209, 65, 0.08), rgba(255, 209, 65, 0)),
-        linear-gradient(180deg, rgba(6, 27, 47, 0.84), rgba(4, 18, 31, 0.93));
+        linear-gradient(180deg, rgba(10, 40, 67, 0.9), rgba(4, 18, 31, 0.96));
     backdrop-filter: blur(4px);
     box-shadow:
-        0 24px 70px rgba(0, 0, 0, 0.45),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        0 14px 34px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
     animation: panelIn 900ms ease-out both;
     position: relative;
     overflow: hidden;
@@ -163,84 +177,84 @@ footer {
 .construction-panel::after {
     content: "";
     position: absolute;
-    left: -12%;
-    width: 124%;
-    height: 18px;
-    background: repeating-linear-gradient(-45deg, #111 0 18px, #ffd24c 18px 36px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
 }
 
 .construction-panel::before {
-    top: 14px;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 208, 73, 0.09), transparent 40%);
 }
 
 .construction-panel::after {
-    bottom: 14px;
+    left: 24px;
+    right: 24px;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 217, 111, 0.9), transparent);
+    opacity: 0.8;
 }
 
 .construction-logo {
-    width: clamp(180px, 32vw, 310px);
+    width: clamp(104px, 17vw, 150px);
     height: auto;
     display: block;
-    margin: 26px auto 6px;
-    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+    margin: 14px auto 0;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
     animation: logoBreathe 6s ease-in-out infinite;
 }
 
 .construction-kicker {
-    margin: 2px 0 0;
+    margin: 0;
     display: inline-block;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
     background: #ffcf4f;
-    border: 2px solid #111;
+    border: 1px solid rgba(17, 17, 17, 0.5);
     color: #111;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    font-size: 0.67rem;
     font-weight: 800;
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .construction-panel h1 {
-    margin: 8px 0 4px;
-    font-size: clamp(1.95rem, 4.2vw, 3.8rem);
+    margin: 4px 0 2px;
+    font-size: clamp(1.45rem, 3vw, 2.3rem);
     line-height: 1.1;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #fff6d1;
-    text-shadow:
-        0 4px 0 rgba(0, 0, 0, 0.35),
-        0 10px 22px rgba(0, 0, 0, 0.35);
+    color: #f5f4ea;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
 }
 
 .construction-message {
-    margin: 0 auto 2px;
-    max-width: 44ch;
-    font-size: clamp(1rem, 1.85vw, 1.3rem);
-    line-height: 1.5;
-    color: #d5deea;
+    margin: 0 auto;
+    max-width: 43ch;
+    font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+    line-height: 1.45;
+    color: #d7deea;
     font-weight: 600;
 }
 
 .construction-eta {
-    margin: 0 auto 4px;
-    padding: 8px 14px;
+    margin: 0 auto;
+    padding: 6px 12px;
     border-radius: 999px;
-    border: 1px dashed rgba(255, 207, 79, 0.9);
-    background: rgba(255, 207, 79, 0.12);
-    color: #ffe9a4;
-    font-size: clamp(0.88rem, 1.5vw, 1rem);
+    border: 1px solid rgba(255, 207, 79, 0.58);
+    background: rgba(255, 207, 79, 0.08);
+    color: #fde7a1;
+    font-size: clamp(0.78rem, 1vw, 0.88rem);
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.015em;
 }
 
 .construction-portfolio {
-    margin: 0 auto 20px;
-    max-width: 48ch;
-    font-size: clamp(0.94rem, 1.6vw, 1.05rem);
-    line-height: 1.5;
-    color: #bdcde1;
+    margin: 0 auto 6px;
+    max-width: 45ch;
+    font-size: clamp(0.85rem, 1vw, 0.94rem);
+    line-height: 1.45;
+    color: #c1cee0;
 }
 
 .construction-portfolio a {
@@ -276,23 +290,92 @@ footer {
 }
 
 @media (max-width: 600px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .construction-page {
-        padding: 14px;
+        padding:
+            max(10px, env(safe-area-inset-top))
+            max(10px, env(safe-area-inset-right))
+            max(12px, env(safe-area-inset-bottom))
+            max(10px, env(safe-area-inset-left));
+        background:
+            radial-gradient(120% 85% at 50% -8%, rgba(22, 78, 126, 0.58), rgba(10, 31, 52, 0.95) 56%, #04101d 100%),
+            linear-gradient(160deg, #061322 0%, #0a2640 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .construction-page::before {
+        opacity: 0.12;
+    }
+
+    .construction-page::after {
+        display: none;
     }
 
     .construction-panel {
-        border-radius: 22px;
-        gap: 10px;
+        width: 100%;
+        border-radius: 16px;
+        gap: 8px;
+        padding: 14px 12px 16px;
+        border-width: 1px;
+        box-shadow:
+            0 12px 24px rgba(0, 0, 0, 0.34),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+    }
+
+    .construction-panel::before,
+    .construction-panel::after {
+        left: 14px;
+        right: 14px;
     }
 
     .construction-logo {
-        width: clamp(150px, 42vw, 220px);
-        margin-top: 24px;
-        margin-bottom: 6px;
+        width: clamp(86px, 30vw, 112px);
+        margin-top: 8px;
+        margin-bottom: 2px;
     }
 
     .construction-panel h1 {
-        letter-spacing: 0.02em;
+        margin-top: 2px;
+        font-size: clamp(1.24rem, 6.6vw, 1.68rem);
+        letter-spacing: 0.01em;
+    }
+
+    .construction-message {
+        max-width: 30ch;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .construction-eta {
+        max-width: 100%;
+        padding: 5px 10px;
+        font-size: 0.74rem;
+        line-height: 1.35;
+        white-space: normal;
+    }
+
+    .construction-portfolio {
+        max-width: 30ch;
+        margin-bottom: 6px;
+        font-size: 0.82rem;
+        line-height: 1.4;
+    }
+
+    .construction-message,
+    .construction-eta,
+    .construction-portfolio {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 360px) {
+    .construction-panel::after {
+        display: none;
     }
 }
 
